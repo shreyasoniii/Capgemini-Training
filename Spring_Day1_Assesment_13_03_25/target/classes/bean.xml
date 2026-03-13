@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="employee" class="com.cg.bean.Employee">-->
+<!--        <property name="employeeId" value="12345"/>-->
+<!--        <property name="employeeName" value="Harry"/>-->
+<!--        <property name="salary" value="40000.0"/>-->
+<!--        <property name="bussinessUnit" value="PES"/>-->
+<!--        <property name="age" value="30"/>-->
+<!--    </bean>-->
+<!--    <bean id="sbu" class="com.cg.bean.SBU">-->
+<!--        <property name="sbuid" value="1"/>-->
+<!--        <property name="sbuName" value="Product Engineering Services"/>-->
+<!--        <property name="sbuHead" value="Kiran Rao"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="employee" class="com.cg.bean.Employee">-->
+<!--        <property name="employeeId" value="12345"/>-->
+<!--        <property name="employeeName" value="Shreya"/>-->
+<!--        <property name="salary" value="40000.0"/>-->
+<!--        <property name="age" value="40"/>-->
+<!--        <property name="businessUnit" ref="sbu"/> </bean>-->
+    <bean id="emp1" class="com.cg.bean.Employee">
+        <property name="employeeId" value="12345"/>
+        <property name="employeeName" value="Shivansh"/>
+        <property name="salary" value="40000.0"/>
+        <property name="age" value="23"/>
+    </bean>
+
+    <bean id="emp2" class="com.cg.bean.Employee">
+        <property name="employeeId" value="12346"/>
+        <property name="employeeName" value="Shreyaa"/>
+        <property name="salary" value="45000.0"/>
+        <property name="age" value="21"/>
+    </bean>
+
+    <bean id="sbu" class="com.cg.bean.SBU">
+        <property name="sbuid" value="01"/>
+        <property name="sbuName" value="Product Engineering Services"/>
+        <property name="sbuHead" value="Kiran"/>
+        <property name="empList">
+            <list>
+                <ref bean="emp1"/>
+                <ref bean="emp2"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>
