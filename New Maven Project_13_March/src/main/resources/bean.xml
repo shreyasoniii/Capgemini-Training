@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+<!--    to enable spring annotation-->
+    <context:annotation-config/>
+       <bean id="hello" class="com.cg.bean.HelloWorld" scope="prototype">
+           <property name="name" value="Shreya"></property>
+<!--           <constructor-arg name="name" value="Mansi"></constructor-arg>-->
+           <property name="lang" ><list>
+               <value>Hindi</value>
+               <value>Sanskriti</value>
+               <value>Maths</value>
+           </list></property>
+       </bean>
+    <!--bean configration kar diya hai ab bean object bna ke degi helloworld ki-->
+    <!--Scope ki value ko prototype karna padega for changing it into singleton-->
+    <!-- setter injection always happen with setter method-->
+    <bean id="employee" class="com.cg.bean.Employee" scope="prototype">
+        <constructor-arg name="empid" value="101"></constructor-arg>
+        <constructor-arg name="ename" value="Shreya"></constructor-arg>
+<!--        <constructor-arg name="address" ref="add"></constructor-arg>-->
+
+
+    </bean>
+    <bean id="add" class="com.cg.bean.Address">
+        <constructor-arg name="city" value="Delhi"></constructor-arg>
+        <constructor-arg name="country" value="India"></constructor-arg>
+        <constructor-arg name="zip" value="123444"></constructor-arg>
+    </bean>
+
+
+
+</beans>
